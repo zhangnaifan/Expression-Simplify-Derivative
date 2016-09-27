@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class parentheses {
 
 	public static void main(String[] args){
+
 		System.out.println("Testing! Please input something¡­¡­Enter ¡°END¡± to stop.");
 		
 		Expr my=null;
