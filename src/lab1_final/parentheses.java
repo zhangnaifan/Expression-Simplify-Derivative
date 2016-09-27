@@ -14,7 +14,6 @@ public class parentheses {
 		Expr my=null;
 
 		boolean exist=false;
-		
 		String prompt;                                                   //the prompt message
 		
 		Scanner input = new Scanner(System.in) ;                         //input
