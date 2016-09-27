@@ -18,7 +18,6 @@ public class parentheses {
 		Scanner input = new Scanner(System.in) ;                         //input
 		
 		String line = input.nextLine();                                  //read input
-                                                 
 		while(!("END".equals(line)))                                     //loop until "END"
 		{
 			if (line.isEmpty())
