@@ -13,7 +13,7 @@ public class parentheses {
 		
 		Expr my=null;
 		
-		boolean exist=false;
+		boolean exist=false;  //用于判断当前是否已经存在一个表达式，如果在没有的情况下接到用户尝试求值/求导的命令，会直接报错并要求用户输入表达式
 		
 		Scanner input = new Scanner(System.in) ;                         //input
 		String line = input.nextLine();                                  //read input
@@ -371,10 +371,10 @@ class Expr{
 		
 		if(temp.length()==0)
 		{
-			System.out.println("Flag(null)");
+			System.out.println("Flag(null)");              //去掉空格之后 发现并没有实际输入内容
 			throw new Exception();
 		}
-		else if (temp.length()==1 && "abcdefghijklmnopqrstuvwxyz1234567890".indexOf(temp.charAt(0))==-1)
+		else if (temp.length()==1 && "abcdefghijklmnopqrstuvwxyz1234567890".indexOf(temp.charAt(0))==-1)     //当只有一位字符且不代表变量也不是数字时，告诉用户输入错误
 		{
 			System.out.println("only one meaningless char.");
 			throw new Exception();
@@ -388,7 +388,7 @@ class Expr{
 		{
 			for(int i = 0; i<temp.length();i++)
 			{
-				if ("abcdefghijklmnopqrstuvwxyz1234567890+-*^.".indexOf(temp.charAt(i))==-1)
+				if ("abcdefghijklmnopqrstuvwxyz1234567890+-*^.".indexOf(temp.charAt(i))==-1)                    //检验非法字符
 				{
 					System.out.println("no " + temp.charAt(i) + "is allowed!");
 					throw new Exception();
