@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class parentheses {
 
 	public static void main(String[] args){
-		
+		System.out.println("Hello!");
 		System.out.println("Testing! Please input something……Enter “END” to stop.");
 		
 		Expr my=null;
@@ -28,7 +28,7 @@ public class parentheses {
 				continue;
 			}
 			
-			if(line.charAt(0)=='!')
+			if(line.charAt(0)=='!') //判断是否是一个求值或者求导命令
 			{
 				if (exist == false )
 				{
