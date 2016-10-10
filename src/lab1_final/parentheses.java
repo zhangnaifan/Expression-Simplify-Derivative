@@ -28,7 +28,7 @@ public class parentheses {
 				continue;
 			}
 			
-			if(line.charAt(0)=='!')
+			if(line.charAt(0)=='!')                                       //判断这条输入是否是求值或者求导命令
 			{
 				if (exist == false )
 				{
