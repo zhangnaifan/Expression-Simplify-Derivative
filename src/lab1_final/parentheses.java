@@ -18,6 +18,10 @@ public class parentheses {
 		Scanner input = new Scanner(System.in) ;                         //input
 		
 		String line = input.nextLine();                                  //read input
+		
+		System.out.println("Testing! Please input something……Enter “END” to stop.");
+		
+                                                 
 		while(!("END".equals(line)))                                     //loop until "END"
 		{
 			if (line.isEmpty())
@@ -373,6 +377,11 @@ class Expr{
 			throw new Exception();
 		}
 		else if (temp.length()==1 && "abcdefghijklmnopqrstuvwxyz1234567890".indexOf(temp.charAt(0))==-1)
+
+			System.out.println("Flag(null)");              //去掉空格之后 发现并没有实际输入内容
+			throw new Exception();
+		}
+		else if (temp.length()==1 && "abcdefghijklmnopqrstuvwxyz1234567890".indexOf(temp.charAt(0))==-1)     //当只有一位字符且不代表变量也不是数字时，告诉用户输入错误
 		{
 			System.out.println("only one meaningless char.");
 			throw new Exception();
@@ -386,7 +395,7 @@ class Expr{
 		{
 			for(int i = 0; i<temp.length();i++)
 			{
-				if ("abcdefghijklmnopqrstuvwxyz1234567890+-*^.".indexOf(temp.charAt(i))==-1)
+				if ("abcdefghijklmnopqrstuvwxyz1234567890+-*^.".indexOf(temp.charAt(i))==-1)     
 				{
 					System.out.println("no " + temp.charAt(i) + "is allowed!");
 					throw new Exception();
