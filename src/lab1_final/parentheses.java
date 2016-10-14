@@ -8,7 +8,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class parentheses {
 
 	public static void main(String[] args){
-		System.out.println("Testing! Please input something……Enter “END” to stop.");
 		
 		Expr my=null;
 
@@ -377,11 +376,11 @@ class Expr{
 			throw new Exception();
 		}
 		else if (temp.length()==1 && "abcdefghijklmnopqrstuvwxyz1234567890".indexOf(temp.charAt(0))==-1)
-
+		{
 			System.out.println("Flag(null)");              //去掉空格之后 发现并没有实际输入内容
 			throw new Exception();
 		}
-		else if (temp.length()==1 && "abcdefghijklmnopqrstuvwxyz1234567890".indexOf(temp.charAt(0))==-1)     //当只有一位字符且不代表变量也不是数字时，告诉用户输入错误
+		else if (temp.length()==1 && "abcdefghijklmnopqrstuvwxyz1234567890".indexOf(temp.charAt(0))==-1) //当只有一位字符且不代表变量也不是数字时，告诉用户输入错误
 		{
 			System.out.println("only one meaningless char.");
 			throw new Exception();
