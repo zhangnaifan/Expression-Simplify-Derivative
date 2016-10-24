@@ -16,7 +16,6 @@ public class Parentheses {
   public static void main(String[] args) {
     System.out.println("Testing! Please input something¡­¡­Enter ¡°END¡± to stop.");
     Expr my = null;
-
     boolean exist = false;
     String prompt;                                                 //the prompt message
     Scanner input = new Scanner(System.in) ;                       //input
