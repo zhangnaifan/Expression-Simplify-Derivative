@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class parentheses {
+public class Parentheses {
 
 	public static void main(String[] args){
 
@@ -651,8 +651,8 @@ class Expr{
 						item.setValue(add_this);
 						it.remove();
 						updateConstantItem(add_this);
-					}
-					else{
+					} 
+					else {
 						HashMap<String, Integer> temp = new HashMap<>(factors);
 						temp.remove(name);
 						myExpr.put(temp, add_this);
