@@ -1,5 +1,5 @@
 
-package lab1_final;
+package struct;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -69,7 +69,7 @@ class Expr{
 	private ConcurrentHashMap<HashMap<String,Integer>, Double> myExpr;
 	private HashMap<String,Integer> CONSTANT;
 	
-	public String toString(){
+	/*public String toString(){
 		
 		DecimalFormat df = new DecimalFormat("#.0");
 		String expr = "";
@@ -81,15 +81,7 @@ class Expr{
 			
 			expr += df.format(coeff);
 			
-			for (Map.Entry<String, Integer> factor : item.getKey().entrySet()){
-				if (factor.getKey().length()>0) // print factors
-				{
-					expr += "*"+factor.getKey();
-					int expo = factor.getValue();
-					if (expo>1+1e-6 || expo<1-1e-6)
-						expr +="^"+expo;
-				}
-			}
+			//item print!!!!!!!!!!!!!!
 			expr += "+";
 		}
 
@@ -100,12 +92,12 @@ class Expr{
 		expr = expr.replace("+-", "-");
 		
 		return expr;
-	}
+	}*/
 	
 	//输入字符串（带括号），生成表达式
 	public Expr (String s)throws Exception{
 		
-		CONSTANT = new HashMap<>();
+		CONSTANT = new HashMap<String, Integer>();
 		CONSTANT.put("", 0);
 		
 		Stack<ConcurrentHashMap<HashMap<String, Integer>, Double>> num = new Stack<>();
@@ -397,9 +389,7 @@ class Expr{
 			}
 		}
 		
-		//create a new expression
-		ConcurrentHashMap<HashMap<String,Integer> , Double> expr = new ConcurrentHashMap<>();		
-		
+				
 		line = line.replaceAll("\\s+", " ");
 		line = clean_spaces(line);
 		
@@ -433,6 +423,10 @@ class Expr{
 		
 		//------------------------------------------------------------------------
 		
+		
+		//create a new expression
+		ConcurrentHashMap<HashMap<String,Integer> , Double> expr = new ConcurrentHashMap<>();		
+
 		HashMap<String, Integer> item = new HashMap<>();
 			
 		//set coeff
@@ -550,20 +544,14 @@ class Expr{
 		boolean found = false;
 		
 		myExpr.replace(CONSTANT, 0.0d);
-		
 		Iterator<Map.Entry<HashMap<String, Integer>, Double>> it = myExpr.entrySet().iterator();
-		
 		while (it.hasNext()){
-			
 			Map.Entry<HashMap<String, Integer>, Double> item = it.next();
 			HashMap<String, Integer> factors = item.getKey();
 			double coeff = item.getValue();
-			
 			if (factors.containsKey(name)){
-				
 				found = true;
 				int expo = factors.get(name);
-				
 				//deal with 3x
 				if (isSingleVariableItem(item) && expo<1+1e-6 && expo>1-1e-6){
 					
@@ -586,7 +574,6 @@ class Expr{
 					myExpr.put(temp, coeff*expo);
 					it.remove();
 				}
-
 			} else if (factors.size() > 1) {
 				it.remove();
 			}
