@@ -1,5 +1,5 @@
 # Expression-Simplify-Derivative
-Software Engineering course teamed up with @LeafyWang  
+Software Engineering course lab 1/3/6/7 teamed up with @LeafyWang  
 This is a command line program   
 which allows users to input a string as a mathmatical expression  
 and perform simplify and derivative operations.  
