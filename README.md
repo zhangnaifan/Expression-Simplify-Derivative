@@ -12,5 +12,5 @@ Example:
 >> 8*x*y+2*y  
 >> !simplify y=2 x=3  
 >> 52  
->> x+u.2
+>> x+u.2  
 >> number presentation error!  
